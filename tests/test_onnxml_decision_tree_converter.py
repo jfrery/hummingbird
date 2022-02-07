@@ -34,7 +34,7 @@ class TestONNXDecisionTreeConverter(unittest.TestCase):
         )
 
         # Create ONNX model
-        onnx_model = convert(model, "onnx", X, extra_config)
+        onnx_model = convert(onnx_ml_model, "onnx", X, extra_config)
 
         # Get the predictions for the ONNX-ML model
         session = ort.InferenceSession(onnx_ml_model.SerializeToString())
